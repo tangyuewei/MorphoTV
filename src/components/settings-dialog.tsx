@@ -39,7 +39,7 @@ const SettingsDialog: React.FC<SettingsDialogProps> = ({ open, onOpenChange }) =
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="overflow-hidden p-0 md:max-h-[650px] md:max-w-[700px] lg:max-w-[1000px] z-70 mt-[15%]">
+      <DialogContent className="overflow-hidden p-0 md:max-h-[650px] md:max-w-[700px] lg:max-w-[1000px] z-70">
         <DialogTitle className="sr-only">Settings</DialogTitle>
         <DialogDescription className="sr-only">Customize your settings here.</DialogDescription>
         <SidebarProvider className="items-start">
@@ -65,7 +65,7 @@ const SettingsDialog: React.FC<SettingsDialogProps> = ({ open, onOpenChange }) =
             </SidebarContent>
           </Sidebar>
 
-          <main className="flex flex-1 flex-col overflow-hidden mt-[15%]">
+          <main className="flex flex-1 flex-col overflow-hidden mt-[25%]">
             <header className="flex h-16 shrink-0 items-center gap-2 transition-[width,height] border-b ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12 px-4">
               <div className="flex items-center gap-2">
                 {/* 移动端汉堡包菜单 */}
