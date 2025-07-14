@@ -86,7 +86,7 @@ export default function MainLayout() {
 
             <Link to="/">
               <Button variant="ghost" size="icon" className="md:hidden hover:bg-muted/80">
-                <Home className="w-4 h-4 min-w-[20px] min-h-[20px] sm:min-w-0 sm:min-h-0 flex-shrink-0 box-content [@media_(pointer:coarse)]:w-5 [@media_(pointer:coarse)]:h-5 " />
+                <Home className="w-4 h-4" />
               </Button>
             </Link>
 
@@ -114,22 +114,22 @@ export default function MainLayout() {
 
 
               {/* 分隔线 */}
-           
+
 
               {/* 主题切换按钮 */}
               {/* {mounted && (
                 <Button variant="ghost" size="icon" onClick={() => setTheme(theme === "dark" ? "light" : "dark")} className="hover:bg-muted/80 transition-colors">
-                  {theme === "dark" ? <Sun className="w-4 h-4 min-w-[20px] min-h-[20px] sm:min-w-0 sm:min-h-0 flex-shrink-0 box-content [@media_(pointer:coarse)]:w-5 [@media_(pointer:coarse)]:h-5 " /> : <Moon className="w-4 h-4 min-w-[20px] min-h-[20px] sm:min-w-0 sm:min-h-0 flex-shrink-0 box-content [@media_(pointer:coarse)]:w-5 [@media_(pointer:coarse)]:h-5 " />}
+                  {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
                 </Button>
               )} */}
 
               {/* 设置按钮（移动端） */}
-             
+
               <Button variant="ghost" size="icon" className="md:hidden hover:bg-muted/80" onClick={() => navigate('/history')}>
-                <History className="w-4 h-4 min-w-[20px] min-h-[20px] sm:min-w-0 sm:min-h-0 flex-shrink-0 box-content [@media_(pointer:coarse)]:w-5 [@media_(pointer:coarse)]:h-5 " />
+                <History className="w-4 h-4" />
               </Button>
                <Button variant="ghost" size="icon" className="md:hidden hover:bg-muted/80" onClick={() => setShowSettings(true)}>
-                <Settings className="w-4 h-4 min-w-[20px] min-h-[20px] sm:min-w-0 sm:min-h-0 flex-shrink-0 box-content [@media_(pointer:coarse)]:w-5 [@media_(pointer:coarse)]:h-5 " />
+                <Settings className="w-4 h-4" />
               </Button>
             </div>
           </div>
