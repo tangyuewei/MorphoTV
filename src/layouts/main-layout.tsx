@@ -86,7 +86,7 @@ export default function MainLayout() {
 
             <Link to="/">
               <Button variant="ghost" size="icon" className="md:hidden hover:bg-muted/80">
-                <Home className="w-4 h-4" />
+                <Home className="w-6 h-6" />
               </Button>
             </Link>
 
@@ -119,17 +119,17 @@ export default function MainLayout() {
               {/* 主题切换按钮 */}
               {/* {mounted && (
                 <Button variant="ghost" size="icon" onClick={() => setTheme(theme === "dark" ? "light" : "dark")} className="hover:bg-muted/80 transition-colors">
-                  {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+                  {theme === "dark" ? <Sun className="w-6 h-6" /> : <Moon className="w-6 h-6" />}
                 </Button>
               )} */}
 
               {/* 设置按钮（移动端） */}
              
               <Button variant="ghost" size="icon" className="md:hidden hover:bg-muted/80" onClick={() => navigate('/history')}>
-                <History className="w-4 h-4" />
+                <History className="w-6 h-6" />
               </Button>
                <Button variant="ghost" size="icon" className="md:hidden hover:bg-muted/80" onClick={() => setShowSettings(true)}>
-                <Settings className="w-4 h-4" />
+                <Settings className="w-6 h-6" />
               </Button>
             </div>
           </div>
