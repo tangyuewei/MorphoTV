@@ -39,31 +39,31 @@ export const API_SITES = [
       api: 'https://tyyszy.com/api.php/provide/vod',
       name: '天涯资源',
   },
-  {
-      key: 'xiaomaomi',
-      api: 'https://zy.xiaomaomi.cc/api.php/provide/vod',
-      name: '小猫咪资源',
-  },
+  // {
+  //     key: 'xiaomaomi',
+  //     api: 'https://zy.xiaomaomi.cc/api.php/provide/vod',
+  //     name: '小猫咪资源',
+  // },
   {
       key: 'zy360',
       api: 'https://360zy.com/api.php/provide/vod',
       name: '360资源',
   },
-  {
-      key: 'iqiyi',
-      api: 'https://www.iqiyizyapi.com/api.php/provide/vod',
-      name: 'iqiyi资源',
-  },
+  // {
+  //     key: 'iqiyi',
+  //     api: 'https://www.iqiyizyapi.com/api.php/provide/vod',
+  //     name: 'iqiyi资源',
+  // },
   {
       key: 'wolong',
       api: 'https://wolongzyw.com/api.php/provide/vod',
       name: '卧龙资源',
   }, 
-  {
-      key: 'hwba',
-      api: 'https://cjhwba.com/api.php/provide/vod',
-      name: '华为吧资源',
-  },
+  // {
+  //     key: 'hwba',
+  //     api: 'https://cjhwba.com/api.php/provide/vod',
+  //     name: '华为吧资源',
+  // },
   {
       key: 'jisu',
       api: 'https://jszyapi.com/api.php/provide/vod',
@@ -90,11 +90,11 @@ export const API_SITES = [
       api: 'https://api.zuidapi.com/api.php/provide/vod',
       name: '最大资源'
   },
-  {
-      key: 'yinghua',
-      api: 'https://m3u8.apiyhzy.com/api.php/provide/vod',
-      name: '樱花资源'
-  },
+  // {
+  //     key: 'yinghua',
+  //     api: 'https://m3u8.apiyhzy.com/api.php/provide/vod',
+  //     name: '樱花资源'
+  // },
   {
       key: 'baidu',
       api: 'https://api.apibdzy.com/api.php/provide/vod',
