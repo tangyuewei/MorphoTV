@@ -66,7 +66,7 @@ const SettingsDialog: React.FC<SettingsDialogProps> = ({ open, onOpenChange }) =
           </Sidebar>
 
           <main className="flex flex-1 flex-col overflow-hidden">
-            <header className="flex h-16 shrink-0 items-center gap-2 transition-[width,height] border-b ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12 px-4  mt-[5%]">
+            <header className="flex h-16 shrink-0 items-center gap-2 transition-[width,height] border-b ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12 px-4 mt-[10%]">
               <div className="flex items-center gap-2">
                 {/* 移动端汉堡包菜单 */}
                 <Sheet open={sheetOpen} onOpenChange={setSheetOpen}>
