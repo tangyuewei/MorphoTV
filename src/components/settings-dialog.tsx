@@ -19,13 +19,13 @@ interface SettingsDialogProps {
 }
 
 const menuItems = [
-  { key: "appearance", icon: <Palette className="w-4 h-4 min-w-[20px] min-h-[20px] sm:min-w-0 sm:min-h-0 flex-shrink-0 box-content [@media_(pointer:coarse)]:w-5 [@media_(pointer:coarse)]:h-5 " />, label: "外观设置" },
-  { key: "proxy", icon: <Settings className="w-4 h-4 min-w-[20px] min-h-[20px] sm:min-w-0 sm:min-h-0 flex-shrink-0 box-content [@media_(pointer:coarse)]:w-5 [@media_(pointer:coarse)]:h-5 " />, label: "代理设置" },
-  { key: "site", icon: <Server className="w-4 h-4 min-w-[20px] min-h-[20px] sm:min-w-0 sm:min-h-0 flex-shrink-0 box-content [@media_(pointer:coarse)]:w-5 [@media_(pointer:coarse)]:h-5 " />, label: "采集站点" },
-  { key: "parser", icon: <Link className="w-4 h-4 min-w-[20px] min-h-[20px] sm:min-w-0 sm:min-h-0 flex-shrink-0 box-content [@media_(pointer:coarse)]:w-5 [@media_(pointer:coarse)]:h-5 " />, label: "在线解析" },
-  { key: "ai", icon: <Bot className="w-4 h-4 min-w-[20px] min-h-[20px] sm:min-w-0 sm:min-h-0 flex-shrink-0 box-content [@media_(pointer:coarse)]:w-5 [@media_(pointer:coarse)]:h-5 " />, label: "模型服务" },
-  { key: "drive", icon: <Archive className="w-4 h-4 min-w-[20px] min-h-[20px] sm:min-w-0 sm:min-h-0 flex-shrink-0 box-content [@media_(pointer:coarse)]:w-5 [@media_(pointer:coarse)]:h-5 " />, label: "网盘资源" },
-  { key: "data", icon: <Database className="w-4 h-4 min-w-[20px] min-h-[20px] sm:min-w-0 sm:min-h-0 flex-shrink-0 box-content [@media_(pointer:coarse)]:w-5 [@media_(pointer:coarse)]:h-5 " />, label: "数据管理" },
+  { key: "appearance", icon: <Palette className="w-4 h-4" />, label: "外观设置" },
+  { key: "proxy", icon: <Settings className="w-4 h-4" />, label: "代理设置" },
+  { key: "site", icon: <Server className="w-4 h-4" />, label: "采集站点" },
+  { key: "parser", icon: <Link className="w-4 h-4" />, label: "在线解析" },
+  { key: "ai", icon: <Bot className="w-4 h-4" />, label: "模型服务" },
+  { key: "drive", icon: <Archive className="w-4 h-4" />, label: "网盘资源" },
+  { key: "data", icon: <Database className="w-4 h-4" />, label: "数据管理" },
 ];
 
 const SettingsDialog: React.FC<SettingsDialogProps> = ({ open, onOpenChange }) => {
@@ -39,7 +39,7 @@ const SettingsDialog: React.FC<SettingsDialogProps> = ({ open, onOpenChange }) =
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="overflow-hidden p-0 md:max-h-[650px] md:max-w-[700px] lg:max-w-[1000px] z-70">
+      <DialogContent className="overflow-hidden p-0 md:max-h-[650px] md:max-w-[700px] lg:max-w-[1000px] z-70 mt-[15%]">
         <DialogTitle className="sr-only">Settings</DialogTitle>
         <DialogDescription className="sr-only">Customize your settings here.</DialogDescription>
         <SidebarProvider className="items-start">
