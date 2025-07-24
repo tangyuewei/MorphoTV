@@ -5,6 +5,11 @@ export const API_SITES = [
     name: "黑木耳",
   },
   {
+    key: "mdzy",
+    api: "https://www.mdzyapi.com",
+    name: "魔都资源",
+  },
+  {
     key: "wolong",
     api: "https://wolongzyw.com",
     name: "卧龙资源",
