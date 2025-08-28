@@ -32,93 +32,33 @@ const ApiSitesList: React.FC = () => {
   const [newSite, setNewSite] = useState({ name: "", api: "" });
   const [error, setError] = useState<string | null>(null);
 
-    // const testApiResponse = async () => {
-    //   setIsTesting(true);
-    //   const selectedKeys = getSelectedApiSites();
-    //   const testResults: ApiSiteStatus[] = [];
+  const testApiResponse = async () => {
+    setIsTesting(true);
+    const selectedKeys = getSelectedApiSites();
+    const testResults: ApiSiteStatus[] = [];
 
     // 测试默认API站点
-    // await Promise.all(
-    //   API_SITES.map(async (site) => {
-    //     const targetUrl = `${site.api}/api.php/provide/vod/?ac=detail&wd=${encodeURIComponent("仙逆")}`;
+    await Promise.all(
+      API_SITES.map(async (site) => {
+        const targetUrl = `${site.api}/api.php/provide/vod/?ac=detail&wd=${encodeURIComponent("仙逆")}`;
     
-    //     const startTime = performance.now();
+        const startTime = performance.now();
 
-    //     try {
-    //       const response = await fetchWithProxy(targetUrl);
-    //       if (!response.ok) throw new Error("Network response was not ok");
-    //       await response.json();
-    //       const endTime = performance.now();
-    //       const responseTime = endTime - startTime;
+        try {
+          const response = await fetchWithProxy(targetUrl);
+          if (!response.ok) throw new Error("Network response was not ok");
+          await response.json();
+          const endTime = performance.now();
+          const responseTime = endTime - startTime;
 
-    //       testResults.push({
-    //         key: site.key,
-    //         name: site.name,
-    //         responseTime,
-    //         isSelected: selectedKeys.includes(site.key),
-    //         api: site.api,
-    //       });
-    //     } catch {
-    //       testResults.push({
-    //         key: site.key,
-    //         name: site.name,
-    //         isSelected: selectedKeys.includes(site.key),
-    //         api: site.api,
-    //       });
-    //     }
-    //   })
-    // );
-
-  const testApiResponse = async () => {
-  setIsTesting(true);
-  const selectedKeys = getSelectedApiSites();
-  const testResults: ApiSiteStatus[] = [];
-
-  // 设置超时时间
-  const timeout = 5000;
-
-  // 测试默认 API 站点
-  await Promise.all(
-    API_SITES.map(async (site) => {
-      const targetUrl = `${site.api}/api.php/provide/vod/?ac=detail&wd=${encodeURIComponent("仙逆")}`;
-      const controller = new AbortController();
-      const signal = controller.signal;
-
-      // 设置超时定时器
-      const timeoutId = setTimeout(() => {
-        controller.abort(); // 中止请求
-        console.warn(`请求超时: ${site.name}`);
-      }, timeout);
-
-      const startTime = performance.now();
-
-      try {
-        const response = await fetchWithProxy(targetUrl, { signal });
-        if (!response.ok) throw new Error("Network response was not ok");
-
-        const data = await response.json();
-        const endTime = performance.now();
-        const responseTime = endTime - startTime;
-
-        testResults.push({
-          key: site.key,
-          name: site.name,
-          responseTime,
-          isSelected: selectedKeys.includes(site.key),
-          api: site.api,
-        });
-      } catch (error) {
-        if (error.name === "AbortError") {
-          // 请求被中止（超时）
           testResults.push({
             key: site.key,
             name: site.name,
-            responseTime: -1, // 标记为超时
+            responseTime,
             isSelected: selectedKeys.includes(site.key),
             api: site.api,
           });
-        } else {
-          // 其他错误
+        } catch {
           testResults.push({
             key: site.key,
             name: site.name,
@@ -126,11 +66,8 @@ const ApiSitesList: React.FC = () => {
             api: site.api,
           });
         }
-      } finally {
-        clearTimeout(timeoutId); // 清除定时器
-      }
-    })
-  );
+      })
+    );
 
     // 测试自定义API站点
     try {
