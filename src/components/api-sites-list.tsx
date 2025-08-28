@@ -41,21 +41,16 @@ const ApiSitesList: React.FC = () => {
     await Promise.all(
       API_SITES.map(async (site) => {
         const targetUrl = `${site.api}/api.php/provide/vod/?ac=detail&wd=${encodeURIComponent("仙逆")}`;
-        const controller = new AbortController();
-        const signal = controller.signal;
-
-        // 设置超时定时器
-        const timeoutId = setTimeout(() => {
-          controller.abort(); // 中止请求
-          console.warn(`请求超时: ${site.name}`);
-        }, 5000);
+    
         const startTime = performance.now();
+
         try {
           const response = await fetchWithProxy(targetUrl);
           if (!response.ok) throw new Error("Network response was not ok");
           await response.json();
           const endTime = performance.now();
           const responseTime = endTime - startTime;
+
           testResults.push({
             key: site.key,
             name: site.name,
@@ -63,18 +58,7 @@ const ApiSitesList: React.FC = () => {
             isSelected: selectedKeys.includes(site.key),
             api: site.api,
           });
-        } catch (error) {
-        if (error.name === "AbortError") {
-          // 请求被中止（超时）
-          testResults.push({
-            key: site.key,
-            name: site.name,
-            responseTime: -1, // 标记为超时
-            isSelected: selectedKeys.includes(site.key),
-            api: site.api,
-          });
-        } else {
-          // 其他错误
+        } catch {
           testResults.push({
             key: site.key,
             name: site.name,
@@ -82,9 +66,6 @@ const ApiSitesList: React.FC = () => {
             api: site.api,
           });
         }
-      } finally {
-        clearTimeout(timeoutId); // 清除定时器
-      }
       })
     );
 
