@@ -132,12 +132,6 @@ const ApiSitesList: React.FC = () => {
     })
   );
 
-  // 测试自定义 API 站点（逻辑类似，默认略去）
-
-  setSites(testResults);
-  setIsTesting(false);
-};
-
     // 测试自定义API站点
     try {
       const customSites = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
